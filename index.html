@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chess</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app">
+    <header class="header">
+      <h1>Chess</h1>
+      <p id="status" class="status">White to move</p>
+    </header>
+
+    <main class="main">
+      <div class="board-column">
+        <div class="captured-bar" id="captured-top" aria-label="Captured pieces top">
+          <div class="captured-pieces" id="captured-top-pieces"></div>
+          <span class="material-advantage" id="material-top" hidden></span>
+        </div>
+        <div class="board-wrapper">
+          <div id="board" class="board" aria-label="Chess board"></div>
+        </div>
+        <div class="captured-bar" id="captured-bottom" aria-label="Captured pieces bottom">
+          <div class="captured-pieces" id="captured-bottom-pieces"></div>
+          <span class="material-advantage" id="material-bottom" hidden></span>
+        </div>
+        <p id="material-summary" class="material-summary" aria-live="polite"></p>
+      </div>
+
+      <aside class="sidebar">
+        <div class="panel">
+          <h2>Moves</h2>
+          <ol id="move-list" class="move-list"></ol>
+        </div>
+        <div class="panel actions">
+          <button id="new-game" type="button">New game</button>
+          <button id="flip-board" type="button">Flip board</button>
+          <button id="undo" type="button">Undo</button>
+        </div>
+      </aside>
+    </main>
+  </div>
+
+  <div id="promotion-modal" class="modal hidden" role="dialog" aria-labelledby="promotion-title">
+    <p id="promotion-title">Choose promotion piece</p>
+    <div id="promotion-choices" class="promotion-choices"></div>
+  </div>
+
+  <script src="chess.js"></script>
+</body>
+</html>
